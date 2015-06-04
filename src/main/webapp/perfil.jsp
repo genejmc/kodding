@@ -303,7 +303,7 @@ $Cumple =$_GET['Nacimiento'];
                         </div><!--/row-->
                                         
                       <h4 class="text-center">
-                      <a href="kodding.herokuapp.com"><img src="imagen/kodding.png"></a>
+                      <a href="gsocial.kodding.net46.net"><img src="imagen/kodding.png"></a>
 
                     </div><!-- /col-9 -->
                 </div><!-- /padding -->
