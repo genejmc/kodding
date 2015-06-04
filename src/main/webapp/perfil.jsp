@@ -198,7 +198,7 @@ $Cumple =$_GET['Nacimiento'];
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                       </button>
-                      <a href="http://gsocial.kodding.net46.net/perfil.php" class="navbar-brand logo">
+                      <a href="http://kodding.herokuapp.com/perfil.jsp" class="navbar-brand logo">
                         <img src="imagen/navbar.png">
                       </a>
                     </div>
@@ -303,7 +303,7 @@ $Cumple =$_GET['Nacimiento'];
                         </div><!--/row-->
                                         
                       <h4 class="text-center">
-                      <a href="kodding.net46.net"><img src="imagen/kodding.png"></a>
+                      <a href="kodding.herokuapp.com"><img src="imagen/kodding.png"></a>
 
                     </div><!-- /col-9 -->
                 </div><!-- /padding -->

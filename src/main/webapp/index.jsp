@@ -7,9 +7,9 @@
   <script src="https://apis.google.com/js/client:platform.js?onload=startApp" async defer></script>
   <!-- JavaScript specific to this application that is not related to API
      calls -->
-  <link rel="icon" type="image/x-icon" href="http://gsocial.kodding.net46.net/imagen/icono.png">
-  <script type="text/javascript" src="http://gsocial.kodding.net46.net/js/oauth.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://gsocial.kodding.net46.net/css/index_css.css">
+  <link rel="icon" type="image/x-icon" href="http://kodding.herokuapp.com/imagen/icono.png">
+  <script type="text/javascript" src="http://kodding.herokuapp.com/js/oauth.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://kodding.herokuapp.com/css/index_css.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
   <meta name="google-signin-client_id" content="829118522513-rkmv1er44hkhbbbiv0vspm751tkf352j.apps.googleusercontent.com"></meta>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  
@@ -17,10 +17,10 @@
 <body style="overflow-x:hidden">
   <div class="contenedor">
     <header>
-      <img src="http://gsocial.kodding.net46.net/imagen/header.png">
+      <img src="http://kodding.herokuapp.com/imagen/header.png">
     </header>
     <div class="wrapper"style="padding: 4%;">
-        <form id="datos" method="POST" action="http://gsocial.kodding.net46.net/perfil.jsp">
+        <form id="datos" method="POST" action="http://kodding.herokuapp.com/perfil.jsp">
         <input type="text" name="ID" id="ID" hidden="">
         <input type="text" name="Email" id="Email" hidden="">
         <input type="text" name="Nombre" id="Nombre" hidden="" >
@@ -28,7 +28,7 @@
         <input type="text" name="Nacimiento" id="Nacimiento" hidden="">
         
         
-        <p class="titulo"><img src="http://gsocial.kodding.net46.net/imagen/title.png" class="title"></p>
+        <p class="titulo"><img src="http://kodding.herokuapp.com/imagen/title.png" class="title"></p>
         
         <button form="datos" style="width: 334px; background-color: transparent; border: black;" value="Submit">
           <div id="gConnect" style="margin-left: 63%;">
@@ -37,7 +37,7 @@
 
         </button>
         <button form="datos" id="Conected" type="submit"  hidden=""s
-        value="Submit" Style="background: url(http://gsocial.kodding.net46.net/imagen/signin.png); width: 317px;Height: 72px;border-color: transparent;">
+        value="Submit" Style="background: url(http://kodding.herokuapp.com/imagen/signin.png); width: 317px;Height: 72px;border-color: transparent;">
           <div id="Conected"></div>
         </button>
 
@@ -45,7 +45,7 @@
          
     </div>
     <footer>
-      <img src="http://gsocial.kodding.net46.net/imagen/footer.png">
+      <img src="http://kodding.herokuapp.com/imagen/footer.png">
     </footer>
   </div>
 </body>
