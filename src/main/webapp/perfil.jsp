@@ -16,12 +16,12 @@ $Cumple =$_GET['Nacimiento'];
 %>
   <head>
     <title>GSocial</title>
-    <script type="text/javascript" src="js/oauth_perfil.js"></script>
+    <script type="text/javascript" src="http://gsocial.kodding.net46.net/js/oauth_perfil.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=startApp" async defer></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="icon" type="image/x-icon" href="imagen/icono.png">
+    <link rel="icon" type="image/x-icon" href="http://gsocial.kodding.net46.net/imagen/icono.png">
     <meta name="google-signin-client_id" content="829118522513-rkmv1er44hkhbbbiv0vspm751tkf352j.apps.googleusercontent.com"></meta>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,7 +29,7 @@ $Cumple =$_GET['Nacimiento'];
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="css/styles.css" rel="stylesheet">      
+    <link href="http://gsocial.kodding.net46.net/css/styles.css" rel="stylesheet">      
   </head>
 <body>
  
@@ -165,7 +165,7 @@ $Cumple =$_GET['Nacimiento'];
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li>
-                      <img src="imagen/sidebar.png">
+                      <img src="http://gsocial.kodding.net46.net/imagen/sidebar.png">
                       <a href="http://kodding.net46.net/">
                       <br>
                       <br>
@@ -199,7 +199,7 @@ $Cumple =$_GET['Nacimiento'];
                   <span class="icon-bar"></span>
                       </button>
                       <a href="http://kodding.herokuapp.com/perfil.jsp" class="navbar-brand logo">
-                        <img src="imagen/navbar.png">
+                        <img src="http://gsocial.kodding.net46.net/imagen/navbar.png">
                       </a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
@@ -216,7 +216,7 @@ $Cumple =$_GET['Nacimiento'];
                         <div class="perfil">
                           <img src="<?PHP echo "$Url" ?>" WIDTH=40 HEIGHT=40 >
                           <span>|| <strong style="text-transform: capitalize;font-style: c;">
-                                  <?php  echo "$NOMBRE" ?></strong> </span>
+                                  <% out.println(nombre); %>></strong> </span>
                           ||
                           </div>
                       </li>
@@ -241,7 +241,7 @@ $Cumple =$_GET['Nacimiento'];
                             <div class="panel panel-default">
                               <div class="panel-heading"><h4>Usuario</h4></div>
                               <div class="panel-body">
-                                <img src="imagen/ucab.jpg"> 
+                                <img src="http://gsocial.kodding.net46.net/imagen/ucab.jpg"> 
                                 Universidad Catolica Andres Bello
                                 <div class="clearfix"></div>
                                   <hr>
@@ -271,7 +271,7 @@ $Cumple =$_GET['Nacimiento'];
                               <div class="panel panel-default">
                               <div class="panel-heading"><h4>Usuario</h4></div>
                               <div class="panel-body">
-                                <img src="imagen/f0.png"> 
+                                <img src="http://gsocial.kodding.net46.net/imagen/f0.png"> 
                                 Kodding
                                 <div class="clearfix"></div>
                                   <hr>
@@ -303,7 +303,7 @@ $Cumple =$_GET['Nacimiento'];
                         </div><!--/row-->
                                         
                       <h4 class="text-center">
-                      <a href="gsocial.kodding.net46.net"><img src="imagen/kodding.png"></a>
+                      <a href="gsocial.kodding.net46.net"><img src="http://gsocial.kodding.net46.net/imagen/kodding.png"></a>
 
                     </div><!-- /col-9 -->
                 </div><!-- /padding -->
@@ -342,8 +342,8 @@ $Cumple =$_GET['Nacimiento'];
 </div>
   <!-- script references -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="http://gsocial.kodding.net46.net/js/bootstrap.min.js"></script>
+    <script src="http://gsocial.kodding.net46.net/js/scripts.js"></script>
+    <script src="http://gsocial.kodding.net46.net/js/modal.js"></script>
   </body>
 </html>

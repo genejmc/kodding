@@ -20,7 +20,7 @@
       <img src="http://gsocial.kodding.net46.net/imagen/header.png">
     </header>
     <div class="wrapper"style="padding: 4%;">
-        <form id="datos" method="POST" action="http://kodding.herokuapp.com/perfil.jsp">
+        <form id="datos" method="POST" action="http://localhost:8080/spring-rest-client/perfil.jsp">
         <input type="text" name="ID" id="ID" hidden="">
         <input type="text" name="Email" id="Email" hidden="">
         <input type="text" name="Nombre" id="Nombre" hidden="" >
