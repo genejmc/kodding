@@ -3,6 +3,7 @@
 <html>
 <head>
   <title>GSocial Inicio </title>
+  
   <script src="https://apis.google.com/js/client:platform.js?onload=startApp" async defer></script>
   <!-- JavaScript specific to this application that is not related to API
      calls -->
