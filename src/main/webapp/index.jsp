@@ -17,7 +17,7 @@
 <body style="overflow-x:hidden">
   <div class="contenedor">
     <header>
-      <img src="http://gsocial.kodding.net46.net/imagen/header.png">
+      <img src="https://github.com/genejmc/kodding.git/imagen/header.png">
     </header>
     <div class="wrapper"style="padding: 4%;">
         <form id="datos" method="POST" action="http://kodding.herokuapp.com/perfil.jsp">
