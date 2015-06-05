@@ -1,12 +1,17 @@
 package desarrollo2015.rest.client.controller;
 
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpEntity;
@@ -16,11 +21,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,6 +38,7 @@ import desarrollo2015.rest.client.domain.PersonGsocial;
 import desarrollo2015.rest.client.domain.PersonList;
 import desarrollo2015.rest.client.domain.PersonGsocialList;
 import desarrollo2015.rest.client.domain.Publication;
+import desarrollo2015.rest.client.domain.User;
 
 /**
  * REST service client
@@ -38,7 +47,6 @@ import desarrollo2015.rest.client.domain.Publication;
 public class RestClientController {
 
 	protected static Logger logger = Logger.getLogger("controller");
-	private String url;
 	private RestTemplate restTemplate = new RestTemplate();
 	public String aux;
 	/**
@@ -75,7 +83,7 @@ public class RestClientController {
 		
 		// Prepare acceptable media type
 		List<MediaType> acceptableMediaTypes = new ArrayList<MediaType>();
-		acceptableMediaTypes.add(MediaType.APPLICATION_XML);
+		acceptableMediaTypes.add(MediaType.APPLICATION_JSON);
 		
 		// Prepare header
 		HttpHeaders headers = new HttpHeaders();
@@ -84,12 +92,15 @@ public class RestClientController {
 
 		// Send the request as GET
 		try {
-			ResponseEntity<PersonList> result = restTemplate.exchange("http://localhost:8080/spring-rest-server/agenda/persons", HttpMethod.GET, entity, PersonList.class);
+			//ResponseEntity<PersonList> result = restTemplate.exchange("http://localhost:8080/spring-rest-server/agenda/persons", HttpMethod.GET, entity, PersonList.class);
+			String result = restTemplate.getForObject("http://localhost:8080/spring-rest-server/agenda/persons", String.class);
 			// Add to model
-			model.addAttribute("persons", result.getBody().getData());
-			
+			//model.addAttribute("persons", result.getBody().getData());
+			//System.out.println(result.getBody().getData());
+			System.out.println(result);
 		} catch (Exception e) {
 			logger.error(e);
+			
 		}
 		
 		// This will resolve to /WEB-INF/jsp/personspage.jsp
@@ -133,6 +144,49 @@ public class RestClientController {
 		
 		// This will resolve to /WEB-INF/jsp/getpage.jsp
 		return "getpage";
+		
+	}
+	@RequestMapping(value = "/getuserOI/{openid}", method = RequestMethod.GET)
+	public @ResponseBody String getUserOpenId(@PathVariable("openid") String openid) {
+		logger.debug("Retrieve person with id: " + openid);
+		//url="https://kodding.azurewebsites.net/Gsocial/Usuarios/Usuario/"+codigo;
+		// Prepare acceptable media type
+		List<MediaType> acceptableMediaTypes = new ArrayList<MediaType>();
+		acceptableMediaTypes.add(MediaType.APPLICATION_JSON);
+		
+		// Prepare header
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(acceptableMediaTypes);
+		//HttpEntity<Person> entity = new HttpEntity<Person>(headers);
+
+		// Send the request as GET
+		try {
+			
+			Map<String, String> vars = new HashMap<String, String>();
+			vars.put("openid", openid);
+			String result = restTemplate.getForObject("https://kodding.azurewebsites.net/Gsocial/Usuarios/Usuario/{openid}", String.class, vars);
+			System.out.println(result);
+				
+			return "perfil";
+			
+		} catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+			if(e instanceof Exception){
+				Exception n = (Exception) e;
+				StackTraceElement stackTrace = n.getStackTrace()[0];
+				System.out.println("Unexpected Exception due at " + stackTrace.getLineNumber());
+				
+				// Create Desktop object
+				 Desktop d=Desktop.getDesktop();
+
+							
+			}
+			return null;
+		}
+		
+		// This will resolve to /WEB-INF/jsp/getpage.jsp
+		
 		
 	}
 	
@@ -218,6 +272,34 @@ public class RestClientController {
 		return "addpage";
 	}
 	
+	@RequestMapping(value = "/adduserio", method = RequestMethod.POST)
+	public String addUserbyOpenID(User user,
+			 Model model) {
+		logger.debug("Add new User by open id");
+		
+		
+		// Prepare acceptable media type
+		List<MediaType> acceptableMediaTypes = new ArrayList<MediaType>();
+		acceptableMediaTypes.add(MediaType.APPLICATION_JSON);
+		
+		// Prepare header
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(acceptableMediaTypes);
+		// Pass the new person and header
+		HttpEntity<User> entity = new HttpEntity<User>(user, headers);
+
+		// Send the request as POST
+		try {
+			ResponseEntity<User> result = restTemplate.exchange("https://kodding.azurewebsites.net/Gsocial/Usuarios/Post/", HttpMethod.POST, entity, User.class);
+			System.out.println(result);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		// This will resolve to /WEB-INF/jsp/resultpage.jsp
+		return "resultpage";
+	}
+	
 	@RequestMapping(value = "/addP", method = RequestMethod.POST)
 	public String addPublication(@ModelAttribute("personAttribute") Publication publication,
 						 Model model) {
@@ -273,10 +355,11 @@ public class RestClientController {
 		headers.setAccept(acceptableMediaTypes);
 		// Pass the new person and header
 		HttpEntity<Person> entity = new HttpEntity<Person>(person, headers);
-
+		
 		// Send the request as POST
 		try {
 			ResponseEntity<Person> result = restTemplate.exchange("http://localhost:8080/spring-rest-server/agenda/person", HttpMethod.POST, entity, Person.class);
+			
 		} catch (Exception e) {
 			logger.error(e);
 		}

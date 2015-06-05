@@ -1,28 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es">
-
-<?php
-$NOMBRE = $_GET['Nombre'];
-$CORREO =$_GET['Email'];
-$Url =$_GET['Foto'];
-$Cumple =$_GET['Nacimiento'];
-
-?>
-<%
-	String nombre = request.getParameter("Nombre");
-	System.out.println(nombre);
-%>
   <head>
     <title>GSocial</title>
-    <script type="text/javascript" src="http://gsocial.kodding.net46.net/js/oauth_perfil.js"></script>
+    <script type="text/javascript" src="js/oauth_perfil.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=startApp" async defer></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="icon" type="image/x-icon" href="http://gsocial.kodding.net46.net/imagen/icono.png">
-    <meta name="google-signin-client_id" content="829118522513-rkmv1er44hkhbbbiv0vspm751tkf352j.apps.googleusercontent.com"></meta>
+    <meta name="google-signin-client_id" content="245241056128-9umi8s4l94rfb1389l8d92i5eqga3601.apps.googleusercontent.com"></meta>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,8 +18,6 @@ $Cumple =$_GET['Nacimiento'];
     <link href="http://gsocial.kodding.net46.net/css/styles.css" rel="stylesheet">      
   </head>
 <body>
- 
-
 <div class="wrapper">
     <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">
@@ -42,13 +26,13 @@ $Cumple =$_GET['Nacimiento'];
             <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
               
                 <ul class="nav">
-             <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
-              </ul>
+                  <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+                </ul>
                
                 <ul class="nav hidden-xs" id="lg-menu">
                     <li>
                       <button type="button" class="btn" data-toggle="modal" data-target="#Modal-comentario" data-whatever="@mdo">
-                        <i class="glyphicon glyphicon-comment"></i> Publicar</a>
+                        <i class="glyphicon glyphicon-comment"></i><a>Publicar</a>
                       </button>
                       <!-- Modal del comentario-->
                       <div class="modal fade" id="Modal-comentario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -137,25 +121,19 @@ $Cumple =$_GET['Nacimiento'];
                               <h3 class="modal-title" id="gridSystemModalLabel">Datos Personales</h3>
                               <div class="form-group">
                                  <div class="modal_cuerpo">
-                                  <img src="<?PHP echo "$Url" ?>" >
-                                  <h3><strong style="text-transform: capitalize;font-style: c;">
-                                  <?php  echo "$NOMBRE" ?></strong></h3>
-                                  <h3><strong>
-                                  <?php  echo "$CORREO" ?></strong></h3>
-                                  <h3><strong style="text-transform: capitalize;font-style: c;">
-                                  <?php  echo "$Cumple" ?></strong></h3>
-                                  
+                                  <div id="profile"></div>
                                </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-cerrar" data-dismiss="modal">Cerrar</button>
-                             </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div><!-- /.modal DATOS PERSONALES -->
+                            </div>
+                            </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal DATOS PERSONALES -->
+                      </div>
                     </li>
                     <li>
-                      <button type="button" class="btn" id="signOut" onclick="auth2.signOut()">
+                      <button type="button" class="btn" id="signOut" onclick="auth2.signOut();">
                         <i class="glyphicon glyphicon-log-out"> </i> Salir</button>
                     </li>
                     <li>
@@ -198,14 +176,14 @@ $Cumple =$_GET['Nacimiento'];
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                       </button>
-                      <a href="http://kodding.herokuapp.com/perfil.jsp" class="navbar-brand logo">
-                        <img src="http://gsocial.kodding.net46.net/imagen/navbar.png">
+                      <a href="http://gsocial.kodding.net46.net/perfil.php" class="navbar-brand logo">
+                        <img src="imagen/navbar.png">
                       </a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
                     <form class="navbar-form navbar-left">
                         <div class="input-group input-group-sm" style="max-width:360px;">
-                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="parametro">
                           <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                           </div>
@@ -213,12 +191,8 @@ $Cumple =$_GET['Nacimiento'];
                     </form>
                     <ul class="nav navbar-nav">
                       <li>
-                        <div class="perfil">
-                          <img src="<?PHP echo "$Url" ?>" WIDTH=40 HEIGHT=40 >
-                          <span>|| <strong style="text-transform: capitalize;font-style: c;">
-                                  <% out.println(nombre); %>></strong> </span>
-                          ||
-                          </div>
+                        <div id="navbar"> 
+                        </div>
                       </li>
                     </ul>
                     </nav>
@@ -227,11 +201,10 @@ $Cumple =$_GET['Nacimiento'];
               
                 <div class="padding">
                     <div class="full col-sm-9">
-                        
-                        <!-- content -->                        
+                      <!-- content -->                        
                         <div class="row">
                          <!-- main col left --> 
-                         <div class="col-sm-9">
+                          <div class="col-sm-9">
                           <!-- Add where you want your sign-in button to render -->
                             <!-- Use an image that follows the branding guidelines in a real app -->
                             <div id="gConnect">
@@ -241,7 +214,7 @@ $Cumple =$_GET['Nacimiento'];
                             <div class="panel panel-default">
                               <div class="panel-heading"><h4>Usuario</h4></div>
                               <div class="panel-body">
-                                <img src="http://gsocial.kodding.net46.net/imagen/ucab.jpg"> 
+                                <img src="imagen/ucab.jpg"> 
                                 Universidad Catolica Andres Bello
                                 <div class="clearfix"></div>
                                   <hr>
@@ -271,79 +244,44 @@ $Cumple =$_GET['Nacimiento'];
                               <div class="panel panel-default">
                               <div class="panel-heading"><h4>Usuario</h4></div>
                               <div class="panel-body">
-                                <img src="http://gsocial.kodding.net46.net/imagen/f0.png"> 
+                                <img src="imagen/f0.png"> 
                                 Kodding
                                 <div class="clearfix"></div>
                                   <hr>
                                   <form>
                                     <div class="input-group">
                                       <div class="input-group-btn">
-                                      <button class="btn btn-default">
-                                      <i class="glyphicon glyphicon-map-marker"></i></button>
+                                        <button class="btn btn-default">
+                                        <i class="glyphicon glyphicon-map-marker"></i></button>
                                       </div>
                                       <div class="input-group-btn">
-                                      <button class="btn btn-default">
-                                      <i class="glyphicon glyphicon-paperclip"></i></button>
+                                        <button class="btn btn-default">
+                                        <i class="glyphicon glyphicon-paperclip"></i></button>
                                       </div>
                                       <div>
-                                      <input type="text" class="form-control" placeholder="comentar">
+                                        <input type="text" class="form-control" placeholder="comentar">
                                       </div>
                                       <div class="input-group-btn">
-                                      <button class="btn btn-default"><i class="glyphicon glyphicon-ok">
-                                      </i>
+                                        <button class="btn btn-default"><i class="glyphicon glyphicon-ok">
+                                          </i>
                                       </button>
                                       </div>
                                     </div>
                                   </form>
-                                    
                                 </div>
                               </div>  
-                         </div>
-                          
+                          </div>
                         </div><!--/row-->
-                                        
-                      <h4 class="text-center">
-                      <a href="gsocial.kodding.net46.net"><img src="http://gsocial.kodding.net46.net/imagen/kodding.png"></a>
-
                     </div><!-- /col-9 -->
                 </div><!-- /padding -->
             </div>
-            <!-- /main -->
-          
-        </div>
-    </div>
-</div>
-
-
-<!--post modal-->
-<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      Update Status
-      </div>
-      <div class="modal-body">
-          <form class="form center-block">
-            <div class="form-group">
-              <textarea class="form-control input-lg" autofocus placeholder="What do you want to share?"></textarea>
             </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-          <div>
-          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-            <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-
-      </div>  
-      </div>
+    </div>
   </div>
-  </div>
-</div>
   <!-- script references -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="http://gsocial.kodding.net46.net/js/bootstrap.min.js"></script>
-    <script src="http://gsocial.kodding.net46.net/js/scripts.js"></script>
-    <script src="http://gsocial.kodding.net46.net/js/modal.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>
