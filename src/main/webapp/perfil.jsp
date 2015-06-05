@@ -2,20 +2,20 @@
   <head>
     <title>GSocial</title>
     <script type="text/javascript" src="js/oauth_perfil.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=startApp" async defer></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="icon" type="image/x-icon" href="http://gsocial.kodding.net46.net/imagen/icono.png">
+    <link rel="icon" type="image/x-icon" href="//gsocial.kodding.net46.net/imagen/icono.png">
     <meta name="google-signin-client_id" content="245241056128-9umi8s4l94rfb1389l8d92i5eqga3601.apps.googleusercontent.com"></meta>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="http://gsocial.kodding.net46.net/css/styles.css" rel="stylesheet">      
+    <link href="//gsocial.kodding.net46.net/css/styles.css" rel="stylesheet">      
   </head>
 <body>
 <div class="wrapper">
@@ -65,7 +65,7 @@
                               <!-- FIN MODAL MAPA-->
                               <!--MODAL ADJUNTAR-->
                               <button type="button" class="btn btn-default" >
-                                <a href="http://instagram.com" target="_blank">
+                                <a href="//instagram.com" target="_blank">
                                   <i class="glyphicon glyphicon-camera">
                                   </i>
                                 </a>
@@ -143,8 +143,8 @@
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li>
-                      <img src="http://gsocial.kodding.net46.net/imagen/sidebar.png">
-                      <a href="http://kodding.net46.net/">
+                      <img src="//gsocial.kodding.net46.net/imagen/sidebar.png">
+                      <a href="//kodding.net46.net/">
                       <br>
                       <br>
                       <i class="glyphicon glyphicon-console"></i> Kodding</a>
@@ -176,8 +176,8 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                       </button>
-                      <a href="http://gsocial.kodding.net46.net/perfil.php" class="navbar-brand logo">
-                        <img src="imagen/navbar.png">
+                      <a href="//gsocial.kodding.net46.net/perfil.php" class="navbar-brand logo">
+                        <img src="//gsocial.kodding.net46.net/imagen/navbar.png">
                       </a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
@@ -214,7 +214,7 @@
                             <div class="panel panel-default">
                               <div class="panel-heading"><h4>Usuario</h4></div>
                               <div class="panel-body">
-                                <img src="imagen/ucab.jpg"> 
+                                <img src="//gsocial.kodding.net46.net/imagen/ucab.jpg"> 
                                 Universidad Catolica Andres Bello
                                 <div class="clearfix"></div>
                                   <hr>
@@ -244,7 +244,7 @@
                               <div class="panel panel-default">
                               <div class="panel-heading"><h4>Usuario</h4></div>
                               <div class="panel-body">
-                                <img src="imagen/f0.png"> 
+                                <img src="//gsocial.kodding.net46.net/imagen/f0.png"> 
                                 Kodding
                                 <div class="clearfix"></div>
                                   <hr>
@@ -280,8 +280,8 @@
   </div>
   <!-- script references -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="//gsocial.kodding.net46.net/js/bootstrap.min.js"></script>
+    <script src="//gsocial.kodding.net46.net/js/scripts.js"></script>
+    <script src="//gsocial.kodding.net46.net/js/modal.js"></script>
   </body>
 </html>
