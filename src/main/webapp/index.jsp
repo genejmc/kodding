@@ -16,7 +16,7 @@
 <body style="overflow-x:hidden">
   <div class="contenedor">
     <header>
-      <img src="//gsocial.kodding.net46.net/imagen/header.png">
+      <img src="http://prueba.profit.com.ve/header.png">
     </header>
     <div class="wrapper"style="padding: 4%;">
         <form id="datos" method="GET" action="//localhost:8080/spring-rest-client/perfil.jsp">
@@ -38,7 +38,7 @@
          
     </div>
     <footer>
-      <img src="//WEB-INF/imagen/footer.png">
+      <img src="WEB-INF/imagen/footer.png">
     </footer>
   </div>
 </body>
