@@ -38,7 +38,7 @@
          
     </div>
     <footer>
-      <img src="http://gsocial.kodding.net46.net/imagen/footer.png">
+      <img src="//WEB-INF/imagen/footer.png">
     </footer>
   </div>
 </body>
