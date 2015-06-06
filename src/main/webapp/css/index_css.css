@@ -1,0 +1,38 @@
+.contenedor{
+  width:100%;
+  height:99%;
+}
+
+body{
+  font-family: cambria,san-serif;
+  background-color: transparent;
+  border:0;
+}                                   
+header{
+	text-align: center;
+	width: 100%;
+	border-top:0px;
+}
+footer{
+	text-align: center;
+  width: 100%;
+  border-bottom: 0px;
+}
+
+header img, footer img{
+  width: 100%;
+}
+.wrapper{
+  margin-top: -8%;
+  width: 73%;
+  text-align: center;
+}
+.wrapper img{
+  height: 10%;
+}
+
+p{
+  border-right: -15%;
+  margin-right: -43%;
+  margin-top: 12%;
+}
